@@ -38,7 +38,7 @@ const UserDetail = () => {
         </div>
         <div>
           <div className="mt-5 w-50 mx-auto d-flex align-items-center justify-content-center">
-            <button className="btn btn-danger  ">Delete All</button>
+            <button className="btn btn-danger">Delete All</button>
           </div>
         </div>
       </div>
