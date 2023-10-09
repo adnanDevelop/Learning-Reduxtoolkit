@@ -11,7 +11,7 @@ const userSlice = createSlice({
             state.splice(action.payload , 1)
         },
         deleteAllUser(state , action) {
-            state.push([]);
+            return [];
         },
     },
 });

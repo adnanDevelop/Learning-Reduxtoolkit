@@ -1,7 +1,7 @@
 import React from "react";
 import { fakeUserData } from "../Api/Api";
 import { useDispatch , useSelector } from "react-redux";
-import { addUser , removeUser } from "../../Store/Slices/UserSlice";
+import { addUser , removeUser , deleteAllUser } from "../../Store/Slices/UserSlice";
 
 const UserDetail = () => {
   const data = useSelector((state) => state.user);
@@ -15,7 +15,9 @@ const UserDetail = () => {
     dispatch(removeUser(id));
   }
 
-  
+  const deleteUsers = () => {
+    dispatch(deleteAllUser())
+  }
 
 
 
@@ -38,7 +40,7 @@ const UserDetail = () => {
         </div>
         <div>
           <div className="mt-5 w-50 mx-auto d-flex align-items-center justify-content-center">
-            <button className="btn btn-danger">Delete All</button>
+            <button className="btn btn-danger" onClick={deleteUsers}>Delete All</button>
           </div>
         </div>
       </div>
