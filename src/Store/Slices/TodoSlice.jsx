@@ -8,21 +8,21 @@ const todoSlice = createSlice({
         name: "adnan",
         lastName: "Tariq",
         email: "dummy@gmail.com",
-        phone: "03230838837 ",
+        number: "03230838837 ",
         address: "Tehsil Pindigheb Gheb",
       },
       {
         name: "Hanan",
         lastName: "Tariq",
         email: "dummy@gmail.com",
-        phone: "03230838837 ",
+        number: "03230838837 ",
         address: "Tehsil Pindigheb Gheb",
       },
       {
         name: "Wajid",
         lastName: "Mehmood",
         email: "dummy@gmail.com",
-        phone: "03230838837 ",
+        number: "03230838837 ",
         address: "Tehsil Pindigheb Gheb",
       },
     ],
@@ -46,6 +46,11 @@ const todoSlice = createSlice({
       };
     },
 
+    // ADD DATA REDUCER FUNCTION
+    addData(state , action) {
+      state.defaultTodoData.push(action.payload)
+    },
+
     // EDIT ITEM REDUCER
     editData(state, action) {},
 
@@ -56,4 +61,4 @@ const todoSlice = createSlice({
 });
 
 export default todoSlice.reducer;
-export const { getUniqueData, clearData } = todoSlice.actions;
+export const { getUniqueData, clearData , addData } = todoSlice.actions;

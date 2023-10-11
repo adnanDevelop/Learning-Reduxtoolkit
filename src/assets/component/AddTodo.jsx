@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import { nanoid } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
+import { addData } from "../../Store/Slices/TodoSlice";
+import { useNavigate } from "react-router-dom";
 
 const AddTodo = () => {
-  const [getInputValue, storeInputValue] = useState({ name: "", lastName : '' , email: "" , number : '' });
+  const [getInputValue, storeInputValue] = useState({ id : nanoid() , name: "", lastName : '' , email: "" , number : '' , address : '' });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const inputData = (event) => {
     const { name, value } = event.target;
     storeInputValue({
@@ -9,6 +15,12 @@ const AddTodo = () => {
       [name]: value,
     });
   };
+
+  const submitForm = () => {
+    dispatch(addData(getInputValue));
+    navigate(-1);
+  };
+
   return (
     <>
       <div className="container mt-5">
@@ -84,7 +96,7 @@ const AddTodo = () => {
                   </div>
                 </form>
               </div>
-              <button className="btn btn-success btn-sm ms-3">Save Todo</button>
+              <button className="btn btn-success btn-sm ms-3" onClick={submitForm}>Save Todo</button>
             </div>
           </div>
         </div>

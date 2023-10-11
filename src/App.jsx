@@ -19,7 +19,7 @@ function App() {
           <Route path="/tutorial" element={<UserDetail />} />
           <Route path="/addtodo" element={<AddTodo />} />
           <Route path="/addtodo/:id" element={<ReadTodo />} />
-          <Route path="/addtodo/:id" element={<EditTodo />} />
+          <Route path="/edittodo/:id" element={<EditTodo />} />
         </Routes>
       </BrowserRouter>
       {/* <UserDetail/> */}
